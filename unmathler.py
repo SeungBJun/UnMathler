@@ -144,6 +144,8 @@ def unmathler():
 
         # Trim down potential solutions
         potential_equations = trim_list_of_guesses(potential_equations, equation, evaluation)
+        if equation in potential_equations:
+            potential_equations.remove(equation)
 
         # Select next guess
         equation = score_and_select(potential_equations)
